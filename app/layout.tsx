@@ -60,6 +60,21 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         {children}
 
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-2CMEXZ67PN"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2CMEXZ67PN');
+          `}
+        </Script>
+
+        {/* UserWay Accessibility */}
         <Script
           src="https://cdn.userway.org/widget.js"
           data-account="gBrDW9RrGr"
