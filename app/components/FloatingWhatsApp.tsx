@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 export default function FloatingWhatsApp() {
   return (
     <a
-      href="https://wa.me/972546106659"
+      href="https://wa.me/972546106659?text=שלום,%20הגעתי%20מהאתר%20של%20NexaVent%20ואשמח%20לקבל%20פרטים."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp"
