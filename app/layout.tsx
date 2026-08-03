@@ -43,6 +43,9 @@ export const metadata: Metadata = {
       "תכנון, ייצור והתקנה של מנדפים, תעלות פח, מפוחים ומערכות אוורור למטבחים מסחריים ומוסדיים.",
 
     type: "website",
+    locale: "he_IL",
+    url: "https://nexavent.vercel.app",
+    siteName: "NexaVent",
   },
 };
 
@@ -72,6 +75,34 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-2CMEXZ67PN');
           `}
+        </Script>
+
+        {/* Schema.org */}
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "NexaVent - מנדפים ומערכות אוורור",
+            image: "https://nexavent.vercel.app/images/logo.png",
+            url: "https://nexavent.vercel.app",
+            telephone: "+972546106659",
+            email: "nexavent3@gmail.com",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "אור עקיבא",
+              addressCountry: "IL",
+            },
+            areaServed: "ישראל",
+            sameAs: [
+              "https://www.facebook.com/share/14mxwZnZx7t/"
+            ],
+            description:
+              "תכנון, ייצור והתקנה של מנדפים, תעלות פח, מפוחים ומערכות אוורור למטבחים מקצועיים.",
+          })}
         </Script>
 
         {/* UserWay Accessibility */}
