@@ -8,13 +8,12 @@ import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import Process from "./components/Process";
 import WorkProcess from "./components/WorkProcess";
+
 export default function Home() {
   return (
-    <main
-      dir="rtl"
-      className="min-h-screen bg-[#090d12] text-white"
-    >
+    <main dir="rtl" className="min-h-screen bg-[#090d12] text-white">
       <Navbar />
+
       <section
         className="relative flex min-h-screen items-center justify-center"
         style={{
@@ -25,7 +24,6 @@ export default function Home() {
         }}
       >
         <div className="mx-auto max-w-5xl px-6 text-center">
-
           <Image
             src="/images/logo.png"
             alt="NexaVent"
@@ -37,7 +35,8 @@ export default function Home() {
             }}
             className="mx-auto mb-8"
           />
-                    <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             מנדפים ומערכות סינון
             <br />
             למטבחים מקצועיים
@@ -48,51 +47,35 @@ export default function Home() {
             סינון בהתאמה אישית למסעדות, בתי קפה, מאפיות
             ומטבחים מוסדיים.
           </p>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-
-
-            <a
-              href="https://wa.me/"
-              className="rounded-full border border-white px-8 py-4 hover:bg-white hover:text-black transition"
-            >
-              WhatsApp
-            </a>
-
-          </div>
-
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-                      </div>
-
         </div>
       </section>
+
       <div className="bg-[#081018] border-y border-white/10">
-  <div className="mx-auto max-w-7xl px-6 py-6">
-    <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
+        <div className="mx-auto max-w-7xl px-6 py-6">
+          <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
+            <div>
+              <h3 className="text-xl font-bold text-cyan-400">✓</h3>
+              <p className="mt-2 text-white">תכנון מקצועי</p>
+            </div>
 
-      <div>
-        <h3 className="text-xl font-bold text-cyan-400">✓</h3>
-        <p className="mt-2 text-white">תכנון מקצועי</p>
+            <div>
+              <h3 className="text-xl font-bold text-cyan-400">✓</h3>
+              <p className="mt-2 text-white">עמידה בתקנים</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-cyan-400">✓</h3>
+              <p className="mt-2 text-white">התקנה בכל הארץ</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-cyan-400">✓</h3>
+              <p className="mt-2 text-white">ליווי אישי</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <h3 className="text-xl font-bold text-cyan-400">✓</h3>
-        <p className="mt-2 text-white">עמידה בתקנים</p>
-      </div>
-
-      <div>
-        <h3 className="text-xl font-bold text-cyan-400">✓</h3>
-        <p className="mt-2 text-white">התקנה בכל הארץ</p>
-      </div>
-
-      <div>
-        <h3 className="text-xl font-bold text-cyan-400">✓</h3>
-        <p className="mt-2 text-white">ליווי אישי</p>
-      </div>
-
-    </div>
-  </div>
-</div>
       <Services />
       <WhyUs />
       <Process />
