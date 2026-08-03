@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: "NexaVent | מומחים למנדפים ומערכות אוורור למטבחים מקצועיים",
   description:
     "NexaVent מתמחה במנדפים, תעלות פח, מפוחים ומערכות אוורור למסעדות, בתי מלון, מאפיות ומטבחים מוסדיים.",
-  metadataBase: new URL("https://nexavent.com"),
+  metadataBase: new URL("https://nexavent.vercel.app"),
   keywords: [
     "מנדפים למסעדות",
     "תעלות פח מגולבנות",
@@ -46,7 +47,15 @@ export default function RootLayout({
       dir="rtl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+
+        <Script
+          src="https://cdn.userway.org/widget.js"
+          data-account="gBrDW9RrGr"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }

@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import Process from "./components/Process";
 import WorkProcess from "./components/WorkProcess";
+import Accessibility from "./components/Accessibility";
 export default function Home() {
   return (
     <main
@@ -101,6 +102,7 @@ export default function Home() {
       <WorkProcess />
       <Footer />
       <FloatingWhatsApp />
+      <Accessibility />
     </main>
   );
 }
