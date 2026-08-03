@@ -1,4 +1,28 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [business, setBusiness] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendWhatsApp = () => {
+    const text = `פנייה חדשה מהאתר NexaVent
+
+👤 שם: ${name}
+📞 טלפון: ${phone}
+🏢 עסק: ${business}
+
+💬 הודעה:
+${message}`;
+
+    const url = `https://wa.me/972546106659?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
+  };
+
   return (
     <section
       id="contact"
@@ -17,21 +41,22 @@ export default function Contact() {
         <div className="mt-14 grid gap-6 md:grid-cols-3">
 
           <div className="rounded-2xl border border-white/10 bg-[#131b24] p-8 text-center">
-            <h3 className="mb-4 text-2xl font-bold">
-              📞 טלפון
-            </h3>
+            <h3 className="mb-4 text-2xl font-bold">📞 טלפון</h3>
 
             <p className="leading-8 text-gray-300">
+              ש. מכירות
+              <br />
               054-610-6659
+              <br />
+              <br />
+              מ. מכירות
               <br />
               052-215-0105
             </p>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-[#131b24] p-8 text-center">
-            <h3 className="mb-4 text-2xl font-bold">
-              💬 WhatsApp
-            </h3>
+            <h3 className="mb-4 text-2xl font-bold">💬 WhatsApp</h3>
 
             <a
               href="https://wa.me/972546106659"
@@ -44,9 +69,7 @@ export default function Contact() {
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-[#131b24] p-8 text-center">
-            <h3 className="mb-4 text-2xl font-bold">
-              ✉️ אימייל
-            </h3>
+            <h3 className="mb-4 text-2xl font-bold">✉️ אימייל</h3>
 
             <a
               href="mailto:nexavent3@gmail.com"
@@ -55,47 +78,59 @@ export default function Contact() {
               nexavent3@gmail.com
             </a>
           </div>
-<div className="mt-16 rounded-2xl border border-white/10 bg-[#131b24] p-8">
 
-  <h3 className="mb-8 text-center text-3xl font-bold">
-    בקשת הצעת מחיר
-  </h3>
+        </div>
 
-  <form className="grid gap-5">
+        <div className="mt-16 rounded-2xl border border-white/10 bg-[#131b24] p-8">
 
-    <input
-      type="text"
-      placeholder="שם מלא"
-      className="rounded-xl border border-white/10 bg-[#0b1118] p-4"
-    />
+          <h3 className="mb-8 text-center text-3xl font-bold">
+            בקשת הצעת מחיר
+          </h3>
 
-    <input
-      type="tel"
-      placeholder="טלפון"
-      className="rounded-xl border border-white/10 bg-[#0b1118] p-4"
-    />
+          <div className="grid gap-5">
 
-    <input
-      type="text"
-      placeholder="שם העסק"
-      className="rounded-xl border border-white/10 bg-[#0b1118] p-4"
-    />
+            <input
+              type="text"
+              placeholder="שם מלא"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="rounded-xl border border-white/10 bg-[#0b1118] p-4"
+            />
 
-    <textarea
-      rows={5}
-      placeholder="ספר לנו על הפרויקט..."
-      className="rounded-xl border border-white/10 bg-[#0b1118] p-4"
-    />
+            <input
+              type="tel"
+              placeholder="טלפון"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="rounded-xl border border-white/10 bg-[#0b1118] p-4"
+            />
 
-    <button
-      className="rounded-xl bg-cyan-400 py-4 font-bold text-black transition hover:bg-cyan-300"
-    >
-      שלח בקשה להצעת מחיר
-    </button>
+            <input
+              type="text"
+              placeholder="שם העסק"
+              value={business}
+              onChange={(e) => setBusiness(e.target.value)}
+              className="rounded-xl border border-white/10 bg-[#0b1118] p-4"
+            />
 
-  </form>
+            <textarea
+              rows={5}
+              placeholder="ספר לנו על הפרויקט..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="rounded-xl border border-white/10 bg-[#0b1118] p-4"
+            />
 
-</div>
+            <button
+              type="button"
+              onClick={sendWhatsApp}
+              className="rounded-xl bg-cyan-400 py-4 font-bold text-black transition hover:bg-cyan-300"
+            >
+              שלח בקשה להצעת מחיר
+            </button>
+
+          </div>
+
         </div>
 
       </div>

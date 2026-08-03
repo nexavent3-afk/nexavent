@@ -50,11 +50,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         {children}
 
-        <Script
-          src="https://cdn.userway.org/widget.js"
-          data-account="gBrDW9RrGr"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
