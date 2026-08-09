@@ -14,38 +14,72 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NexaVent | מומחים למנדפים ומערכות אוורור למטבחים מקצועיים",
+  metadataBase: new URL("https://nexavent.vercel.app"),
+
+  title: {
+    default: "NexaVent | מנדפים ומערכות סינון למטבחים מקצועיים",
+    template: "%s | NexaVent",
+  },
 
   description:
-    "NexaVent מתמחה במנדפים, תעלות פח, מפוחים ומערכות אוורור למסעדות, בתי מלון, מאפיות ומטבחים מוסדיים.",
-
-  metadataBase: new URL("https://nexavent.vercel.app"),
+    "NexaVent מתמחה בתכנון, ייצור והתקנת מנדפים, תעלות פח, מפוחים ומערכות סינון למטבחים מקצועיים, מסעדות, בתי קפה, מאפיות ומטבחים מוסדיים.",
 
   keywords: [
     "מנדפים למסעדות",
-    "תעלות פח מגולבנות",
-    "מפוחי אוורור",
-    "מערכת אוורור למטבח",
     "מנדפים למטבחים מקצועיים",
-    "שדרוג מטבח מסחרי",
-    "מערכות אוורור למאפיות",
+    "מנדף למטבח",
+    "תעלות פח מגולוונות",
+    "תעלות פח למנדפים",
+    "מפוחי אוורור",
+    "מערכות סינון למטבח",
+    "מערכת אוורור למטבח",
+    "מנדפים למאפיות",
     "מנדפים למטבח מוסדי",
+    "אוורור מטבחים",
+    "NexaVent",
   ],
 
   verification: {
     google: "nQjT-GPlhQXFhZ7VnJok9DnC_HqlXnHPwAeLpIlkFpk",
   },
 
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
   openGraph: {
-    title: "NexaVent | מומחים למנדפים ומערכות אוורור למטבחים מקצועיים",
-
+    title: "NexaVent | מנדפים ומערכות סינון למטבחים מקצועיים",
     description:
-      "תכנון, ייצור והתקנה של מנדפים, תעלות פח, מפוחים ומערכות אוורור למטבחים מסחריים ומוסדיים.",
-
+      "תכנון, ייצור והתקנה של מנדפים, תעלות פח, מפוחים ומערכות סינון למטבחים מסחריים ומוסדיים.",
     type: "website",
     locale: "he_IL",
     url: "https://nexavent.vercel.app",
     siteName: "NexaVent",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "NexaVent - מנדפים ומערכות סינון למטבחים מקצועיים",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "NexaVent | מנדפים ומערכות סינון",
+    description:
+      "תכנון, ייצור והתקנת מנדפים, מפוחים, תעלות ומערכות סינון למטבחים מקצועיים.",
+    images: ["/images/logo.png"],
+  },
+
+  icons: {
+    icon: "/images/logo.png",
   },
 };
 
@@ -60,7 +94,7 @@ export default function RootLayout({
       dir="rtl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full">
         {children}
 
         {/* Google Analytics */}
@@ -68,6 +102,7 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-2CMEXZ67PN"
           strategy="afterInteractive"
         />
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -86,22 +121,29 @@ export default function RootLayout({
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            name: "NexaVent - מנדפים ומערכות אוורור",
+            name: "NexaVent - מנדפים ומערכות סינון",
             image: "https://nexavent.vercel.app/images/logo.png",
             url: "https://nexavent.vercel.app",
             telephone: "+972546106659",
             email: "nexavent3@gmail.com",
+
             address: {
               "@type": "PostalAddress",
               addressLocality: "אור עקיבא",
               addressCountry: "IL",
             },
-            areaServed: "ישראל",
+
+            areaServed: {
+              "@type": "Country",
+              name: "Israel",
+            },
+
             sameAs: [
-              "https://www.facebook.com/share/14mxwZnZx7t/"
+              "https://www.facebook.com/share/14mxwZnZx7t/",
             ],
+
             description:
-              "תכנון, ייצור והתקנה של מנדפים, תעלות פח, מפוחים ומערכות אוורור למטבחים מקצועיים.",
+              "תכנון, ייצור והתקנה של מנדפים, תעלות פח, מפוחים ומערכות סינון למטבחים מקצועיים.",
           })}
         </Script>
 
