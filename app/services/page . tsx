@@ -1,117 +1,49 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "שירותים | NexaVent – מנדפים, מפוחים ותעלות למטבחים",
+  title: "שירותים | NexaVent",
   description:
-    "NexaVent מספקת פתרונות למטבחים מקצועיים: תכנון והתקנת מנדפים, מפוחים, תעלות פח ומערכות סינון למסעדות, מאפיות, בתי קפה ומטבחים מוסדיים בכל הארץ.",
-
-  keywords: [
-    "מנדפים למטבחים",
-    "מנדפים למסעדות",
-    "מנדף למסעדה",
-    "מנדפים תעשייתיים",
-    "מפוחים למטבחים",
-    "תעלות פח למנדפים",
-    "מערכות סינון למטבחים",
-    "מערכות אוורור למטבחים",
-    "NexaVent",
-  ],
-
-  alternates: {
-    canonical: "https://nexavent.vercel.app/services",
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-  },
-
-  openGraph: {
-    title: "שירותים | NexaVent – מנדפים ומערכות אוורור",
-    description:
-      "תכנון, ייצור והתקנה של מנדפים, מפוחים, תעלות ומערכות סינון למטבחים מקצועיים.",
-    url: "https://nexavent.vercel.app/services",
-    siteName: "NexaVent",
-    locale: "he_IL",
-    type: "website",
-  },
+    "NexaVent מתמחה בתכנון, ייצור והתקנת מנדפים, תעלות פח, מפוחים ומערכות סינון למטבחים מקצועיים.",
 };
-
-const services = [
-  {
-    title: "מנדפים למטבחים מקצועיים",
-    text:
-      "תכנון וייצור מנדפים למטבחים מקצועיים בהתאם למבנה המטבח, ציוד הבישול ודרישות הפרויקט.",
-  },
-  {
-    title: "מנדפים למסעדות",
-    text:
-      "פתרונות יניקה למסעדות, בתי קפה, שווארמיות, מאפיות ועסקי מזון, בהתאמה לצורכי העסק.",
-  },
-  {
-    title: "תעלות פח",
-    text:
-      "תכנון והתקנת תעלות יניקה והולכת אוויר למערכות מנדפים, כולל התאמה לתוואי המבנה.",
-  },
-  {
-    title: "מפוחים",
-    text:
-      "התאמת מפוחים למערכות יניקה ואוורור בהתאם לדרישות המערכת, אורך התעלות ותנאי הפרויקט.",
-  },
-  {
-    title: "מערכות סינון",
-    text:
-      "פתרונות סינון למערכות יניקה במטבחים מקצועיים בהתאם לאופי השימוש ולתנאי המקום.",
-  },
-  {
-    title: "תכנון והתקנה",
-    text:
-      "ליווי הפרויקט משלב התכנון ועד הייצור וההתקנה, עם התאמה לתנאי השטח ולצרכים של העסק.",
-  },
-];
 
 export default function ServicesPage() {
   return (
-    <main
-      dir="rtl"
-      className="min-h-screen bg-[#081018] px-6 py-24 text-white"
-    >
+    <main className="min-h-screen bg-[#081018] px-6 py-24 text-white">
       <section className="mx-auto max-w-6xl">
-        <h1 className="text-center text-5xl font-bold md:text-6xl">
+        <h1 className="text-center text-5xl font-bold">
           שירותי NexaVent
         </h1>
 
         <p className="mx-auto mt-8 max-w-4xl text-center text-xl leading-9 text-gray-300">
-          פתרונות מנדפים, מפוחים, תעלות ומערכות סינון למטבחים מקצועיים,
-          מסעדות, בתי קפה, מאפיות, אולמות אירועים ומטבחים מוסדיים.
+          NexaVent מספקת פתרונות מקצועיים למטבחים עסקיים ומוסדיים,
+          כולל תכנון, ייצור והתקנת מנדפים, מפוחים, תעלות ומערכות סינון.
         </p>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <article
-              key={service.title}
-              className="rounded-2xl border border-white/10 bg-[#131b24] p-8"
-            >
-              <h2 className="text-2xl font-bold">{service.title}</h2>
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-[#131b24] p-8">
+            <h2 className="text-2xl font-bold">מנדפים למטבחים</h2>
+            <p className="mt-4 leading-8 text-gray-300">
+              תכנון וייצור מנדפים בהתאמה אישית למסעדות, בתי קפה, מאפיות
+              ומטבחים מקצועיים.
+            </p>
+          </div>
 
-              <p className="mt-4 leading-8 text-gray-300">
-                {service.text}
-              </p>
-            </article>
-          ))}
+          <div className="rounded-2xl border border-white/10 bg-[#131b24] p-8">
+            <h2 className="text-2xl font-bold">תעלות ומפוחים</h2>
+            <p className="mt-4 leading-8 text-gray-300">
+              תכנון והתקנת תעלות פח ומפוחים בהתאם לדרישות המערכת ולצרכי
+              המטבח.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-[#131b24] p-8">
+            <h2 className="text-2xl font-bold">מערכות סינון</h2>
+            <p className="mt-4 leading-8 text-gray-300">
+              פתרונות סינון ונידוף למטבחים מקצועיים בהתאם לתכנון ולתנאי
+              הפרויקט.
+            </p>
+          </div>
         </div>
-
-        <section className="mt-20 rounded-2xl border border-white/10 bg-[#131b24] p-8 md:p-12">
-          <h2 className="text-center text-3xl font-bold">
-            פתרון מותאם למטבח שלך
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-4xl text-center leading-8 text-gray-300">
-            כל פרויקט מתחיל בהבנת צרכי המטבח ותנאי השטח. NexaVent מספקת
-            פתרונות הכוללים מנדפים, תעלות יניקה, מפוחים ומערכות סינון,
-            בהתאמה למבנה ולציוד הקיים או המתוכנן.
-          </p>
-        </section>
       </section>
     </main>
   );
