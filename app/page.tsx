@@ -120,7 +120,7 @@ export default function Home() {
   ];
 
   return (
-    <main dir="rtl">
+    <main dir="rtl" className="overflow-hidden bg-[#060b11] text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -130,91 +130,146 @@ export default function Home() {
 
       <Navbar />
 
-      <section
-        className="relative flex min-h-screen items-center justify-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(8,12,18,.72),rgba(8,12,18,.72)),url('/images/hood-hero.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <Image
-            src="/images/logo.png"
-            alt="NexaVent - מנדפים ומערכות סינון למטבחים מקצועיים"
-            width={220}
-            height={86}
-            priority
-            className="mx-auto mb-8 h-auto w-[220px]"
-          />
+      {/* HERO */}
+      <section className="relative min-h-screen overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('/images/hood-hero.png')",
+          }}
+        />
 
-          <h1 className="text-5xl font-bold leading-tight md:text-7xl">
-            מנדפים ומערכות סינון
-            <br />
-            למטבחים מקצועיים
-          </h1>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(34,211,238,0.16),transparent_35%),linear-gradient(rgba(4,9,15,.55),rgba(4,9,15,.94))]" />
 
-          <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-gray-300">
-            תכנון, ייצור והתקנת מנדפים, מפוחים, תעלות ומערכות
-            סינון בהתאמה אישית למסעדות, בתי קפה, מאפיות
-            ומטבחים מוסדיים.
-          </p>
-        </div>
-      </section>
-
-      <div className="border-y border-white/10 bg-[#081018]">
-        <div className="mx-auto max-w-7xl px-6 py-6">
-          <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
-            <div>
-              <h3 className="text-xl font-bold text-cyan-400">✓</h3>
-              <p className="mt-2 text-white">תכנון מקצועי</p>
+        <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-5 pb-20 pt-28 md:px-8">
+          <div className="w-full text-center">
+            <div className="mx-auto mb-8 inline-flex rounded-3xl border border-white/15 bg-white/5 px-5 py-3 shadow-2xl backdrop-blur-xl">
+              <span className="text-sm font-medium text-cyan-300 md:text-base">
+                פתרונות אוורור למטבחים מקצועיים
+              </span>
             </div>
 
-            <div>
-              <h3 className="text-xl font-bold text-cyan-400">✓</h3>
-              <p className="mt-2 text-white">עמידה בתקנים</p>
+            <Image
+              src="/images/logo.png"
+              alt="NexaVent - מנדפים ומערכות סינון למטבחים מקצועיים"
+              width={220}
+              height={86}
+              priority
+              className="mx-auto mb-8 h-auto w-[170px] drop-shadow-[0_0_30px_rgba(34,211,238,0.25)] md:w-[220px]"
+            />
+
+            <h1 className="mx-auto max-w-5xl text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-7xl">
+              מנדפים ומערכות סינון
+              <br />
+              <span className="bg-gradient-to-l from-cyan-300 via-white to-cyan-500 bg-clip-text text-transparent">
+                למטבחים מקצועיים
+              </span>
+            </h1>
+
+            <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-gray-300 sm:text-lg md:text-xl">
+              תכנון, ייצור והתקנת מנדפים, מפוחים, תעלות ומערכות
+              סינון בהתאמה אישית למסעדות, בתי קפה, מאפיות
+              ומטבחים מוסדיים.
+            </p>
+
+            <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+              <a
+                href="#contact"
+                className="rounded-2xl bg-cyan-400 px-8 py-4 font-bold text-[#061018] shadow-[0_0_35px_rgba(34,211,238,0.25)] transition duration-300 hover:-translate-y-1 hover:bg-cyan-300"
+              >
+                לקבלת הצעת מחיר
+              </a>
+
+              <a
+                href="#services"
+                className="rounded-2xl border border-white/15 bg-white/5 px-8 py-4 font-bold text-white backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/10"
+              >
+                השירותים שלנו
+              </a>
             </div>
 
-            <div>
-              <h3 className="text-xl font-bold text-cyan-400">✓</h3>
-              <p className="mt-2 text-white">התקנה בכל הארץ</p>
-            </div>
+            {/* Floating stats */}
+            <div className="mx-auto mt-14 grid max-w-4xl gap-4 sm:grid-cols-3">
+              <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-5 shadow-2xl backdrop-blur-xl">
+                <div className="text-2xl font-black text-cyan-300">✓</div>
+                <div className="mt-2 font-bold">תכנון מקצועי</div>
+                <div className="mt-1 text-sm text-gray-400">
+                  התאמה לצורכי הפרויקט
+                </div>
+              </div>
 
-            <div>
-              <h3 className="text-xl font-bold text-cyan-400">✓</h3>
-              <p className="mt-2 text-white">ליווי אישי</p>
+              <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-5 shadow-2xl backdrop-blur-xl">
+                <div className="text-2xl font-black text-cyan-300">✓</div>
+                <div className="mt-2 font-bold">ייצור והתקנה</div>
+                <div className="mt-1 text-sm text-gray-400">
+                  פתרון מקצה לקצה
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-5 shadow-2xl backdrop-blur-xl">
+                <div className="text-2xl font-black text-cyan-300">✓</div>
+                <div className="mt-2 font-bold">שירות בכל הארץ</div>
+                <div className="mt-1 text-sm text-gray-400">
+                  ליווי אישי לאורך הפרויקט
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <Services />
+      {/* SERVICES */}
+      <section
+        id="services"
+        className="relative bg-[#081018] px-5 py-24 md:px-8"
+      >
+        <div className="absolute left-1/2 top-0 h-40 w-96 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
 
-      <WhyUs />
+        <div className="relative">
+          <Services />
+        </div>
+      </section>
 
-      {/* תהליך העבודה שלנו */}
-      <section className="bg-[#081018] px-6 py-24 text-white">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="mb-16 text-center text-5xl font-bold">
-            תהליך העבודה שלנו
-          </h2>
+      {/* WHY US */}
+      <section className="bg-[#060b11] px-5 py-24 md:px-8">
+        <WhyUs />
+      </section>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {/* WORK PROCESS */}
+      <section className="relative bg-[#081018] px-5 py-24 text-white md:px-8">
+        <div className="absolute right-0 top-1/3 h-72 w-72 rounded-full bg-cyan-400/5 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <span className="text-sm font-bold uppercase tracking-[0.3em] text-cyan-400">
+              איך זה עובד
+            </span>
+
+            <h2 className="mt-4 text-4xl font-black md:text-5xl">
+              תהליך העבודה שלנו
+            </h2>
+
+            <p className="mt-5 leading-8 text-gray-400">
+              ליווי מסודר משלב הפנייה הראשונית ועד להשלמת הפרויקט.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {workSteps.map((step) => (
               <div
                 key={step.number}
-                className="rounded-2xl border border-white/10 bg-[#131b24] p-8"
+                className="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
               >
-                <div className="mb-6 text-5xl font-black text-cyan-400">
+                <div className="text-5xl font-black text-cyan-400/80 transition duration-500 group-hover:text-cyan-300">
                   {step.number}
                 </div>
 
-                <h3 className="mb-4 text-2xl font-bold">
+                <h3 className="mt-7 text-2xl font-bold">
                   {step.title}
                 </h3>
 
-                <p className="leading-8 text-gray-300">
+                <p className="mt-4 leading-8 text-gray-400">
                   {step.text}
                 </p>
               </div>
@@ -223,9 +278,15 @@ export default function Home() {
         </div>
       </section>
 
-      <Contact />
+      {/* CONTACT */}
+      <section id="contact">
+        <Contact />
+      </section>
 
-      <Projects />
+      {/* PROJECTS */}
+      <section id="projects">
+        <Projects />
+      </section>
 
       <Footer />
 
